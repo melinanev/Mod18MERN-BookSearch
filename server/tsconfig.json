@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2022",
-    "module": "es2022",
+    "module": "commonjs",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "allowJs": true,
@@ -18,8 +18,11 @@
     "noImplicitOverride": true,
     "useUnknownInCatchVariables": true,
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true
   },
   "include": ["src"],
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.spec.ts"],
   "typeRoots": ["./node_modules/@types", "./src/types"]
 }

@@ -1,9 +1,21 @@
 services:
   - type: web
-    name: book-search
+    name: book-search-server
     env: node
-    buildCommand: npm run render-build
-    startCommand: npm run render-start
+    buildCommand: cd server && npm install && npm run build
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+  - type: web
+    name: book-search-client
+    env: node
+    buildCommand: cd client && npm install && npm run build
+    startCommand: cd client && npm run preview
     envVars:
       - key: NODE_ENV
         value: production
