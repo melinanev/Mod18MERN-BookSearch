@@ -6,9 +6,15 @@ import { typeDefs, resolvers } from './schemas/index.js';
 import { authMiddleware } from './services/auth.js';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 // Convert top-level file to a module with top-level await
 export {};  // Important: makes the file a module
+
+// Define __dirname for ES module compatibility
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
