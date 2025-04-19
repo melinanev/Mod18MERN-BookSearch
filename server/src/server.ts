@@ -5,6 +5,7 @@ import { expressMiddleware } from '@apollo/server/express4';
 import { typeDefs, resolvers } from './schemas/index.js';
 import { authMiddleware } from './services/auth.js';
 import cors from 'cors';
+import mongoose from 'mongoose';
 
 // Convert top-level file to a module with top-level await
 export {};  // Important: makes the file a module
@@ -18,6 +19,7 @@ const server = new ApolloServer({
   resolvers,
 });
 
+await server.start(); // Ensure the server is started before applying middleware
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -59,7 +61,6 @@ app.use((_, res) => {
 
 // Update database connection to use environment variables
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/booksearch';
-import mongoose from 'mongoose';
 
 mongoose.connect(DB_URI)
   .then(() => {
