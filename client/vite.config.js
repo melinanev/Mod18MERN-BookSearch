@@ -21,5 +21,9 @@ export default defineConfig({
     },
     build: {
         outDir: 'dist', // Ensure this matches the server's static assets directory
+        target: 'es2020', // Ensure compatibility with modern JavaScript
+        rollupOptions: {
+            // Add any necessary Rollup options here
+        },
     },
 });
