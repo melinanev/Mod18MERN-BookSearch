@@ -1,0 +1,1 @@
+import User from './User.js'; // Add the `.js` extension
