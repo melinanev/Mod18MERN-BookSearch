@@ -1,4 +1,4 @@
-# Book Search Engine
+# Mod18MERN Book Search Engine
 
 ## Description
 
@@ -48,12 +48,38 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Installation
 
+```bash
+npm install
+```
+
+Navigate to the client directory and build the client
+```bash
+cd client
+npm run build
+```
+Navigate to the server directory and build the server
+```bash
+cd server
+npm run build
+```
+
+Navigate back to the root directory
+```bash
+cd ..
+npm run build
+```
+
 
 
 ## Usage 
 
-npm run dev
+Navigate to Render for deployment and use
 
+```bash
+build command: npm run render-build
+start command: npm run render-start
+```
+Add environment variables to Render
 
 ## License
 
@@ -74,3 +100,4 @@ If you have any questions about the project, you can reach me at:
 - GitHub: [melinanev](https://github.com/melinanev)
 - Email: [melina.l.nevarez@gmail.com](mailto:melina.l.nevarez@gmail.com)
 - Repository: https://github.com/melinanev/Mod18MERN-BookSearch.git
+- Render: https://mod18mern-booksearch.onrender.com
