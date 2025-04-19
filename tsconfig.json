@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     // ...existing options...
-    "module": "esnext", // Change this to a supported module system
+    "module": "esnext", // Ensure this is set to a supported module system
+    "target": "es2020", // Ensure the target supports modern JavaScript features
+    "moduleResolution": "node", // Use Node.js module resolution
+    "allowSyntheticDefaultImports": true // Optional: Allows default imports for compatibility
     // ...existing options...
   }
 }
