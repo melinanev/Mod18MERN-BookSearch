@@ -17,7 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001; // Ensure PORT is obtained from environment variables
 
 // Create Apollo server
 const server = new ApolloServer({
@@ -71,12 +71,13 @@ const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/booksearch'
 mongoose.connect(DB_URI)
   .then(() => {
     console.log('✅ Successfully connected to the database');
-    app.listen(PORT, () => {
+    app.listen(PORT, () => { // Bind to the correct port
       console.log(`🌍 API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
     });
   })
   .catch((err) => {
     console.error('❌ Database connection error:', err);
+    process.exit(1); // Exit the process if the database connection fails
   });
 
